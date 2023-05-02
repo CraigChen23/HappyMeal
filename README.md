@@ -1,12 +1,23 @@
-# HappyMeal
-
-SoftDev\
-What does your data do?\
-started: 2023-04-28\
-completed: ??
+# INSERT PROJECT NAME by HappyMeal
 
 ## Roster and Roles:
- * PM: Craig Chen  
+ * Craig Chen (PM)   
  * Erica Li
  * William Guo
  * Nada Hameed
+
+---
+## Description of website:
+
+---
+## Launch codes:
+1) open terminal and clone repo (with html or ssh)  
+```$ git clone git@github.com:CraigChen23/HappyMeal.git```  
+or  
+```$ git clone https://github.com/CraigChen23/HappyMeal.git```  
+2) install everything from requirements  
+```$ pip install -r requirements.txt```  
+3) run ```__init__.py``` by running ```python __init__.py```, open the url in the command prompt (127.0.0.1:5000) in a browser   
+```$ python app/__init__.py```  
+4) Have fun! 
+---
