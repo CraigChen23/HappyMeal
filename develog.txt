@@ -24,3 +24,10 @@ WilliamG -- 2023-04-28 9:17
 * Initialized repo with necessary files
 * Created design doc
 ==============================================================
+
+ALL -- 2023-05-02 21:08
+--------------------------------------------------------------
+* Fleshed out design doc idea
+* comply with steps from do.md 
+* register submodule (CraigC) 
+==============================================================
