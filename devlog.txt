@@ -31,3 +31,12 @@ ALL -- 2023-05-02 21:08
 * comply with steps from do.md 
 * register submodule (CraigC) 
 ==============================================================
+
+ALL -- 2023-05-02 21:24
+--------------------------------------------------------------
+* finished design doc
+* designated roles
+* finished diagrams
+* added design doc to repo (all files in place for tmrw!)
+* changed the name from develog.txt to devlog.txt :(
+==============================================================
