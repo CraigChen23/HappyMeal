@@ -1,10 +1,10 @@
 # INSERT PROJECT NAME by HappyMeal
 
 ## Roster and Roles:
- * Craig Chen (PM)   
- * Erica Li
- * William Guo
- * Nada Hameed
+ * Craig Chen (PM) : APIs and Flask
+ * Erica Li: HTML/CSS
+ * William Guo: JS data visualization
+ * Nada Hameed: SQL Database 
 
 ---
 ## Description of website:
@@ -30,4 +30,4 @@ or
 
 Description here 
 
-Source: 
+Source: https://www.kaggle.com/datasets/yamaerenay/ico-coffee-dataset-worldwide
