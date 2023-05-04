@@ -39,4 +39,13 @@ ALL -- 2023-05-02 21:24
 * finished diagrams
 * added design doc to repo (all files in place for tmrw!)
 * changed the name from develog.txt to devlog.txt :(
-==============================================================
+=============================================================
+
+WilliamG -- 2023-05-04 12:44
+--------------------------------------------------------------
+* uploaded new design doc to repo with the following changes:
+  - Add goals of what we doing and description 
+  - Add login page with logo 
+  - Filtering option (choose country and then show up on graph, checkboxes maybe) 
+  - Updated component and front end map
+===============================================================
