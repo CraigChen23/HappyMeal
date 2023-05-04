@@ -44,7 +44,7 @@ ALL -- 2023-05-02 21:24
 WilliamG -- 2023-05-04 12:44
 --------------------------------------------------------------
 * uploaded new design doc to repo with the following changes:
-  - Add goals of what we doing and description 
+  - Add goals of what we doing and expanded certain descriptions 
   - Add login page with logo 
   - Filtering option (choose country and then show up on graph, checkboxes maybe) 
   - Updated component and front end map
