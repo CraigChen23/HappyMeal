@@ -49,3 +49,11 @@ WilliamG -- 2023-05-04 12:44
   - Filtering option (choose country and then show up on graph, checkboxes maybe) 
   - Updated component and front end map
 ===============================================================
+
+NadaH -- 2023-05-04 09:23
+--------------------------------------------------------------
+* working flask app is in place (tomorrow's delivarables)
+* created html files for login, home, error, and registration
+* worked on __init__.py, created databases and db methods
+Q: do we need a login page? (it's not really relevant to our project)
+===============================================================
