@@ -5,6 +5,10 @@ from flask import Flask, render_template, redirect, session, request, url_for
 app = Flask(__name__)
 app.secret_key = "super"
 
+DB_FILE="users.db"
+db = sqlite3.connect(DB_FILE, check_same_thread=False)
+c = db.cursor()
+
 '''METHODS============================================================='''
 
 '''create user'''
@@ -110,6 +114,7 @@ def user_exists(user):
 
 create_users_db()
 
+
 '''FLASK================================================='''
 
 '''
@@ -119,7 +124,8 @@ root route, renders the login page
 def disp_loginpage():
     if 'username' in session: #home page rendered if there is a session
         return render_template('home.html', msg="successfully logged in")
-    return render_template('login.html')
+    #return render_template('login.html')
+    return render_template('test.html')
 
 '''
 login route, checks if attempted login matches data in the
