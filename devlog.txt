@@ -57,3 +57,10 @@ NadaH -- 2023-05-04 09:23
 * worked on __init__.py, created databases and db methods
 Q: do we need a login page? (it's not really relevant to our project)
 ===============================================================
+
+ALL -- 2023-05-05 10:29
+--------------------------------------------------------------
+* linked js to html (deliverables for monday)
+* looked into chloropleth diagrams (through d3.js)
+* created static folder for js file(s)
+===============================================================
