@@ -8,6 +8,10 @@
 
 ---
 ## Description of website:
+We plan to make a choropleth map of the world showcasing the exports of coffees from each country (or at least the ones on the database) throughout the different years. When users click onto the country, it will redirect them to another page that has a bar graph and pie chart of their coffee export throughout the years. 
+
+Clients are able to filter results based on country and year. 
+Time permitted, a search function to find nearby coffee shops based on location 
 
 ---
 ## API Cards:
