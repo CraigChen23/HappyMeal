@@ -1,4 +1,4 @@
-# INSERT PROJECT NAME by HappyMeal
+# STAYHAPPY by HappyMeal
 
 ## Roster and Roles:
  * Craig Chen (PM) : APIs and Flask
