@@ -9,19 +9,22 @@
 
     <body>
         <form action="/register" method="POST" class = "text-center">
-            <h1 class="text-center"><u>Register</u></h1>
+            <h1 class="text-center">Register An Account</h1>
             <b>{{msg}}</b>
             <div class="grid-x grid-padding-x">
                 <div class="cell small-12">
                     <label>Username
-                    <input type="username" name="newUser" id="inputuser" placeholder="emersoniscool" aria-describedby="exampleHelpTextPassword" required >
-                    <p class="help-text" id="exampleHelpTextPassword">Enter your username.</p>
+                    <input type="username" name="newUser" id="inputuser" placeholder="Enter your username">
                     </label>
                 </div>
                 <div class="cell small-12">
                     <label>Password
-                    <input type="password" name="newPass" id="inputpass" placeholder="nadaisalsocool" aria-describedby="exampleHelpTextPassword" required >
-                    <p class="help-text" id="exampleHelpTextPassword">Enter your password.</p>
+                    <input type="password" name="newPass" id="inputpass" placeholder="Enter your password">
+                    </label>
+                </div>
+                <div class="cell small-12">
+                    <label> Confirm Password
+                    <input type = "password" name="confirmPass" id="inputpass2" placeholder="Enter your password">
                     </label>
                 </div>
             </div>

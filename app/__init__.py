@@ -18,7 +18,7 @@ def disp_loginpage():
     if 'username' in session: #home page rendered if there is a session
         return render_template('home.html', msg="successfully logged in")
     #return render_template('login.html')
-    return render_template('test.html')
+    return render_template('login.html')
 
 '''
 login route, checks if attempted login matches data in the
