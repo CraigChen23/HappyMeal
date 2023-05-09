@@ -64,3 +64,17 @@ ALL -- 2023-05-05 10:29
 * looked into chloropleth diagrams (through d3.js)
 * created static folder for js file(s)
 ===============================================================
+
+ALL -- 2023-05-08 09:20
+--------------------------------------------------------------
+* created separate db.py file for db things
+* worked on html
+* read up on chloropleth graphs/how to implement it into our code
+===============================================================
+
+NadaH -- 2023-05-09 07:21
+--------------------------------------------------------------
+* created exports.csv
+* created db for exports
+* started on code to put exports data into a db
+===============================================================
