@@ -36,25 +36,32 @@ def authenticate():
         session['username'] = user
         return render_template('home.html', msg = "successfully logged in")
     else:
-        return render_template('login.html', msg="login failed")
+        return render_template('login.html', msg="Login Failed")
 
 '''
 register route, allows user to create a new account
 '''
 @app.route("/register", methods=['GET','POST'])
 def register_account():
+    if 'username' in session: #if someone tries to register while already logged in
+        return redirect(url_for('home'))
+
     if request.method == 'GET':
         return render_template('register.html')
     user = request.form['newUser']
     #user = request.form.get('newUser')
     passw = request.form['newPass']
     #passw = request.form.get('newPass')
+    passw2 = request.form['confirmPass']
 
+    if not passw == passw2: #checks if the password matches the confirmation password
+        return render_template("register.html", FAILMSG="Passwords don't match!")
+       
     if db.user_exists(user):
-        return render_template('register.html', msg="username is in use!")
+        return render_template('register.html', FAILMSG="Username is in use!")
     else:
         db.add_user(user, passw)
-        return render_template('login.html', msg = "user registered!, log in with your new credentials.")
+        return render_template('login.html', FAILMSG = "User registered!, Log in with your new credentials.")
 
 @app.route("/logout", methods=['GET', 'POST'])
 def log_out():

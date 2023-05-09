@@ -10,7 +10,9 @@
     <body>
         <form action="/register" method="POST" class = "text-center">
             <h1 class="text-center">Register An Account</h1>
-            <b>{{msg}}</b>
+            <div class="alert alert-danger" role="alert">
+                {{FAILMSG}}
+            </div>
             <div class="grid-x grid-padding-x">
                 <div class="cell small-12">
                     <label>Username

@@ -78,3 +78,9 @@ NadaH -- 2023-05-09 07:21
 * created db for exports
 * started on code to put exports data into a db
 ===============================================================
+
+EricaL -- 2023-05-09 09:27
+--------------------------------------------------------------
+* edited register.html & home.html
+* implementing carousel & background images
+===============================================================
