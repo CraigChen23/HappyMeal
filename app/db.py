@@ -91,39 +91,44 @@ def create_exports_db():
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create it
     c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
     # users table
-    c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, 1990 INTEGER, 1991 INTEGER, 1992 INTEGER, 1993 INTEGER, 1994 INTEGER, 1995 INTEGER, 1996 INTEGER, 1997 INTEGER, 1998 INTEGER, 1999 INTEGER, 2000 INTEGER, 2001 INTEGER, 2002 INTEGER, 2003 INTEGER, 2004 INTEGER, 2005 INTEGER, 2006 INTEGER, 2007 INTEGER, 2008 INTEGER, 2009 INTEGER, 2010 INTEGER, 2011 INTEGER, 2012 INTEGER, 2013 INTEGER, 2014 INTEGER, 2015 INTEGER, 2016 INTEGER, 2017 INTEGER, 2018 INTEGER)")
-
+    #c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, 1990 REAL, 1991 REAL, 1992 REAL, 1993 REAL, 1994 REAL, 1995 REAL, 1996 REAL, 1997 REAL, 1998 REAL, 1999 REAL, 2000 REAL, 2001 REAL, 2002 REAL, 2003 REAL, 2004 REAL, 2005 REAL, 2006 REAL, 2007 REAL, 2008 REAL, 2009 REAL, 2010 REAL, 2011 REAL, 2012 REAL, 2013 REAL, 2014 REAL, 2015 REAL, 2016 REAL, 2017 REAL, 2018 REAL)")
+    c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, 1990 REAL)")
     db.commit() #save changes
     db.close()  #close database
-'''
+
 def populate_exports_db():
 
-    dict = {}
-    dict["country"] = []
+    DB_FILE="exports.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    #dict = {}
+    #dict["country"] = []
     #dict["age"] = []
     #dict["id"] = []
 
-    with open('exports.csv') as f:
-        r =  csv.DictReader(f)
-        for row in r:
-            dict["country"].append(row['country'])
+    with open('exports.csv', 'r') as f:
+        reader =  csv.DictReader(f)
+        dict = []
+
+        for row in reader:
+            dict.append(row)
+            #dict["country"].append(row['country'])
             #dict["age"].append(row['age'])
             #dict["id"].append(row['id'])
-            things = row["country"]
-            command = "insert into exports values(things);"
+            #things = row["country"]
+            #command = "insert into exports values(things);"
             #command = "insert into student values ([studentDict["name"],studentDict["age"],studentDict["id"]])"
             #c.execute(command)
-print(dict)
 
-#insert = "INSERT INTO student (name, age, id) VALUES (?,?,?)",[studentDict["name"],studentDict["age"],studentDict["id"]]
-select = "SELECT * FROM exports"
+    for i in dict:
+        c.execute("INSERT INTO exports VALUES('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(i['country'], i['1990'], i['1991'], i['1992'], i['1993'], i['1994'], i['1995'], i['1996'], i['1997'], i['1998'], i['1999'], i['2000'], i['2001'], i['2002'], i['2003'], i['2004'], i['2005'], i['2006'], i['2007'], i['2008'], i['2009'], i['2010'], i['2011'], i['2012'], i['2013'], i['2014'], i['2015'], i['2016'], i['2017'], i['2018']))
+    
+    command = ""
+    c.execute(command)
 
-#c.execute(insert)
-rows = c.execute(select).fetchall()
-for r in rows:
-    print (r)
+    db.commit()
+    db.close()
 
 
-command = ""          # test SQL stmt in sqlite3 shell, save as string
-c.execute(command)    # run SQL statement
-'''
+create_exports_db()
+populate_exports_db()
