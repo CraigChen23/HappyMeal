@@ -130,5 +130,5 @@ def populate_exports_db():
     db.close()
 
 
-create_exports_db()
-populate_exports_db()
+#create_exports_db()
+#populate_exports_db()
