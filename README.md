@@ -19,6 +19,7 @@ Time permitted, a search function to find nearby coffee shops based on location
 https://restcountries.com/v3.1/all
 (https://restcountries.com/v3.1/name/{name})
 
+https://www.geoapify.com/static-maps-api
 ---
 
 ## Launch codes:
