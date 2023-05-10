@@ -22,6 +22,7 @@ https://restcountries.com/v3.1/all (open api)
 
 
 https://www.geoapify.com/static-maps-api (key accessed)
+
 ```
 var requestOptions = {
   method: 'GET',
