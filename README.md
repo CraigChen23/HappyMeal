@@ -20,6 +20,7 @@ https://restcountries.com/v3.1/all
 (https://restcountries.com/v3.1/name/{name})
 
 https://www.geoapify.com/static-maps-api
+
 ---
 
 ## Launch codes:
