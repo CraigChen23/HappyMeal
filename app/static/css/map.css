@@ -1,15 +1,15 @@
 body {
     margin: 0px;
     overflow: hidden;
-    background-color:rgb(98, 150, 227)
+    background-color:white
   }
   
   .country {
-    fill:#d4d2d2;
+    fill:#d4d2d2; 
     stroke: black;
-    stroke-opacity: 0.3;
+    stroke-width: 0.5px;
   }
 
   .country:hover{
-    fill:red
+    fill:burlywood
   }

@@ -137,7 +137,3 @@ def populate_exports_db():
 
     db.commit()
     db.close()
-
-'''
-create_exports_db()
-#populate_exports_db()

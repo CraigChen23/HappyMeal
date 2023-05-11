@@ -83,6 +83,7 @@ EricaL -- 2023-05-09 09:27
 --------------------------------------------------------------
 * edited register.html & home.html
 * implementing carousel & background images
+===============================================================
 
 WilliamG -- 2023-05-09 22:55
 --------------------------------------------------------------
@@ -94,4 +95,12 @@ WilliamG -- 2023-05-09 22:55
 DATA CONDUIT: 
 - db.py reads through and parse coffee data file, separating by country name, export amount and year
 - country name from table is compared with labeled name on map to match the data
+===============================================================
+
+WilliamG -- 2023-05-10 23:58
+--------------------------------------------------------------
+* completed zoom function for map
+* color of countries on map can be changed in js now instead of set in css
+* messing around with choropleth (NOT LOOKING SO HOT RN)
+  - why the color scale no change for different countries, they all have same color  :( 
 ===============================================================
