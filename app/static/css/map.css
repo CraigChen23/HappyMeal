@@ -5,9 +5,9 @@ body {
   }
   
   .country {
-    fill:#d4d2d2;
+    fill:#d4d2d2; 
     stroke: black;
-    stroke-opacity: 0.3;
+    stroke-width: 0.5px;
   }
 
   .country:hover{
