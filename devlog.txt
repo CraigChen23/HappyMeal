@@ -104,3 +104,11 @@ WilliamG -- 2023-05-10 23:58
 * messing around with choropleth (NOT LOOKING SO HOT RN)
   - why the color scale no change for different countries, they all have same color  :( 
 ===============================================================
+
+ALL -- 2023-05-11 09:27
+--------------------------------------------------------------
+Erica: Added logo to HOME page
+Nada: created database and working on the populate function
+Craig: Created API cards 
+Wiiliam: Looking into Bar Charts for country's exports 
+===============================================================
