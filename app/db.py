@@ -2,6 +2,7 @@
 
 import sqlite3
 import csv
+import pandas as pd
 
 '''USERS==================================================================='''
 
@@ -91,24 +92,25 @@ def create_exports_db():
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create it
     c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
 
-    #c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, 1990 REAL, 1991 REAL, 1992 REAL, 1993 REAL, 1994 REAL, 1995 REAL, 1996 REAL, 1997 REAL, 1998 REAL, 1999 REAL, 2000 REAL, 2001 REAL, 2002 REAL, 2003 REAL, 2004 REAL, 2005 REAL, 2006 REAL, 2007 REAL, 2008 REAL, 2009 REAL, 2010 REAL, 2011 REAL, 2012 REAL, 2013 REAL, 2014 REAL, 2015 REAL, 2016 REAL, 2017 REAL, 2018 REAL)")
-    #c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, '1990' DOUBLE)")
-    
+    c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, '1990' REAL, '1991' REAL, '1992' REAL, '1993' REAL, '1994' REAL, '1995' REAL, '1996' REAL, '1997' REAL, '1998' REAL, '1999' REAL, '2000' REAL, '2001' REAL, '2002' REAL, '2003' REAL, '2004' REAL, '2005' REAL, '2006' REAL, '2007' REAL, '2008' REAL, '2009' REAL, '2010' REAL, '2011' REAL, '2012' REAL, '2013' REAL, '2014' REAL, '2015' REAL, '2016' REAL, '2017' REAL, '2018' REAL)")
+    #c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, '1990' REAL)")
+    '''
     with open ('exports.csv', 'r') as f:
         reader = csv.reader(f)
         columns = next(reader)
-        print(columns)
+        #print(columns)
         query = 'insert into exports({0}) values ({1})'
         query = query.format(','.join(columns), ','.join('?' * len(columns)))
+        print(columns)
         print(query)
         for data in reader:
             c.execute(query, data)
         c.commit()
-
+'''
     db.commit() #save changes
     db.close()  #close database
 
-'''
+
 def populate_exports_db():
 
     DB_FILE="exports.db"
@@ -117,6 +119,21 @@ def populate_exports_db():
 
     with open('exports.csv', 'r') as f:
         reader =  csv.DictReader(f)
+        column = next(reader)
+        print(column)
+
+
+    db = sqlite3.connect(':memory:')
+    dfs = pd.read_csv('exports.csv')
+    for exports, df in dfs.items():
+        df.to_sql(exports, db)
+        print("EXPORTS:0000000000000000000000000")
+        print(exports)
+        print("DATAFRAME:=============")
+        print(df)
+
+    
+        '''
         dict = []
 
         for row in reader:
@@ -134,6 +151,9 @@ def populate_exports_db():
     
     command = ""
     c.execute(command)
-
+'''
     db.commit()
     db.close()
+
+create_exports_db()
+populate_exports_db()
