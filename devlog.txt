@@ -97,7 +97,7 @@ DATA CONDUIT:
 - country name from table is compared with labeled name on map to match the data
 ===============================================================
 
-WilliamG -- 2023-05-10 11:58
+WilliamG -- 2023-05-10 23:58
 --------------------------------------------------------------
 * completed zoom function for map
 * color of countries on map can be changed in js now instead of set in css
