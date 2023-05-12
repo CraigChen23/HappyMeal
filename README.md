@@ -16,12 +16,11 @@ Time permitted, a search function to find nearby coffee shops based on location
 ---
 ## API Cards:
 
-https://restcountries.com/v3.1/all (open api)
+Rest Countries API:
+https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_RestCountries.md
 
-- https://restcountries.com/v3.1/name/{name}
-
-
-https://www.geoapify.com/static-maps-api (key accessed)
+Geoapify API:
+https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Geoapify.md 
 
 ```
 var requestOptions = {
