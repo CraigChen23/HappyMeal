@@ -118,3 +118,12 @@ WilliamG -- 2023-05-10 23:27
 * created chart.js, chart.html and chart.css to display data
 * input test data for pie chart, line chart, and bar chart
 ===============================================================
+
+ALL -- 2023-05-12 09:27
+--------------------------------------------------------------
+Erica: Created api_functions.py & working on connecting the home page to the page 
+with the country's info
+Nada: Trying to fix populate & export.db
+Craig: Updated API cards
+Wiiliam: Finished bar charts
+===============================================================

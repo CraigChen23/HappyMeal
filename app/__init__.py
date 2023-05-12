@@ -68,6 +68,11 @@ def log_out():
     session.pop('username', None)
     return redirect('/')
 
+#click on country and it brings you to a page with all their info
+@app.route("/countryinfo", methods=['GET', 'POST'])
+def get_country_info():
+    return render_template('chart.html')
+
 @app.errorhandler(500)
 def no_info():
     return render_template('noinfo.html'), 500
