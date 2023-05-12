@@ -112,3 +112,9 @@ Nada: created database and working on the populate function
 Craig: Created API cards 
 Wiiliam: Looking into Bar Charts for country's exports 
 ===============================================================
+
+WilliamG -- 2023-05-10 23:27
+--------------------------------------------------------------
+* created chart.js, chart.html and chart.css to display data
+* input test data for pie chart, line chart, and bar chart
+===============================================================
