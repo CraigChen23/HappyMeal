@@ -119,21 +119,27 @@ def populate_exports_db():
 
     with open('exports.csv', 'r') as f:
         reader =  csv.DictReader(f)
-        column = next(reader)
-        print(column)
-
-
-    db = sqlite3.connect(':memory:')
+        for row in reader:
+            r = row.values()
+            k = row.keys()
+            for k in row.keys:
+                
+            print(k)
+            #print(r)
+            #c.execute("INSERT INTO exports values(row)")
+            
+            print(row)
+            print("==============================")
+        #column = next(reader)
+        #print(column)
+    '''db = sqlite3.connect(':memory:')
     dfs = pd.read_csv('exports.csv')
     for exports, df in dfs.items():
         df.to_sql(exports, db)
         print("EXPORTS:0000000000000000000000000")
-        print(exports)
+        #print(exports)
         print("DATAFRAME:=============")
-        print(df)
-
-    
-        '''
+        #print(df)
         dict = []
 
         for row in reader:
