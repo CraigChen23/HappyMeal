@@ -72,6 +72,17 @@ def log_out():
     session.pop('username', None)
     return redirect('/')
 
+@app.route("/home", methods=['GET', 'POST'])
+def home():
+    return render_template('home.html')
+
+# allow user to search country info and it brings to page with infor
+@app.route("/home/search", methods=['GET', 'POST'])
+def get_country_info():
+    country_name = request.form.get("query")
+    return render_template('chart.html', country = country_name)
+
+'''
 #click on country and it brings you to a page with all their info
 @app.route("/countryinfo", methods=['GET', 'POST'])
 def get_country_info():
@@ -80,6 +91,7 @@ def get_country_info():
     result = data['title']
     return jsonify(result=result)
     return render_template('chart.html')
+'''
 
 @app.errorhandler(500)
 def no_info():
