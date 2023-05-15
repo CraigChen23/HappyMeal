@@ -9,6 +9,8 @@ db = sqlite3.connect(DB_FILE, check_same_thread=False)
 c = db.cursor()'''
 
 db.create_users_db()
+db.create_exports_db()
+db.populate_exports_db()
 
 '''
 root route, renders the login page

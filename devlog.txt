@@ -127,3 +127,12 @@ Nada: Trying to fix populate & export.db
 Craig: Updated API cards
 Wiiliam: Finished bar charts
 ===============================================================
+
+ALL -- 2023-05-15 09:20
+--------------------------------------------------------------
+Erica: worked on api function
+Nada: succeeded in populating exports.db
+Craig: set up droplet
+Wiiliam: worked on connecting chart to database data
+Q: How do you access a js variable in a python file?
+===============================================================

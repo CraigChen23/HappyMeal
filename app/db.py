@@ -93,73 +93,32 @@ def create_exports_db():
     c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
 
     c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, '1990' REAL, '1991' REAL, '1992' REAL, '1993' REAL, '1994' REAL, '1995' REAL, '1996' REAL, '1997' REAL, '1998' REAL, '1999' REAL, '2000' REAL, '2001' REAL, '2002' REAL, '2003' REAL, '2004' REAL, '2005' REAL, '2006' REAL, '2007' REAL, '2008' REAL, '2009' REAL, '2010' REAL, '2011' REAL, '2012' REAL, '2013' REAL, '2014' REAL, '2015' REAL, '2016' REAL, '2017' REAL, '2018' REAL)")
-    #c.execute("CREATE TABLE IF NOT EXISTS exports(country TEXT, '1990' REAL)")
-    '''
-    with open ('exports.csv', 'r') as f:
-        reader = csv.reader(f)
-        columns = next(reader)
-        #print(columns)
-        query = 'insert into exports({0}) values ({1})'
-        query = query.format(','.join(columns), ','.join('?' * len(columns)))
-        print(columns)
-        print(query)
-        for data in reader:
-            c.execute(query, data)
-        c.commit()
-'''
+    
     db.commit() #save changes
     db.close()  #close database
 
-
+'''populate exports database'''
 def populate_exports_db():
 
     DB_FILE="exports.db"
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
 
-    with open('exports.csv', 'r') as f:
-        reader =  csv.DictReader(f)
-        for row in reader:
-            r = row.values()
-            k = row.keys()
-            for k in row.keys:
-                
-            print(k)
-            #print(r)
-            #c.execute("INSERT INTO exports values(row)")
-            
-            print(row)
-            print("==============================")
-        #column = next(reader)
-        #print(column)
-    '''db = sqlite3.connect(':memory:')
-    dfs = pd.read_csv('exports.csv')
-    for exports, df in dfs.items():
-        df.to_sql(exports, db)
-        print("EXPORTS:0000000000000000000000000")
-        #print(exports)
-        print("DATAFRAME:=============")
-        #print(df)
-        dict = []
-
-        for row in reader:
-            dict.append(row)
-            #dict["country"].append(row['country'])
-            #dict["age"].append(row['age'])
-            #dict["id"].append(row['id'])
-            #things = row["country"]
-            #command = "insert into exports values(things);"
-            #command = "insert into student values ([studentDict["name"],studentDict["age"],studentDict["id"]])"
-            #c.execute(command)
-
-    for i in dict:
-        c.execute("INSERT INTO exports VALUES('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(i['country'], i['1990'], i['1991'], i['1992'], i['1993'], i['1994'], i['1995'], i['1996'], i['1997'], i['1998'], i['1999'], i['2000'], i['2001'], i['2002'], i['2003'], i['2004'], i['2005'], i['2006'], i['2007'], i['2008'], i['2009'], i['2010'], i['2011'], i['2012'], i['2013'], i['2014'], i['2015'], i['2016'], i['2017'], i['2018']))
+    with open ('exports.csv', 'r') as f:
+        reader = csv.reader(f)
+        columns = next(reader) 
+        query = 'insert into exports({0}) values ({1})'
+        query = query.format(','.join(columns), ','.join('?' * len(columns)))
+        cursor = db.cursor()
+        for data in reader:
+            cursor.execute(query, data)
+            #print(data)
+        db.commit()
     
-    command = ""
-    c.execute(command)
-'''
+    print("==============================")
+    
     db.commit()
     db.close()
 
-create_exports_db()
-populate_exports_db()
+#create_exports_db()
+#populate_exports_db()
