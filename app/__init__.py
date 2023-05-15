@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, session, request, url_for
+import json
 import db
+import api_functions as api 
 
 app = Flask(__name__)
 app.secret_key = "super"
@@ -71,6 +73,10 @@ def log_out():
 #click on country and it brings you to a page with all their info
 @app.route("/countryinfo", methods=['GET', 'POST'])
 def get_country_info():
+    data = request.get_json() # retrieve the data sent from JavaScript
+    # process the data using Python code
+    result = data['title']
+    return jsonify(result=result)
     return render_template('chart.html')
 
 @app.errorhandler(500)
