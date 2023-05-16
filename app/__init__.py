@@ -77,14 +77,14 @@ def home():
     return render_template('home.html')
 
 # allow user to search country info and it brings to page with info
-@app.route("/home/search/<input>", methods=['GET', 'POST'])
+@app.route("/search/<input>", methods=['GET', 'POST'])
 def get_country_info(input):
     if not 'username' in session: #if someone tries to go here when not logged in
         return redirect(url_for('login'))
 
     if request.method == 'POST':
         if 'input' in request.form: #if user
-            user_search = request.form['country_name'].strip()
+            user_search = request.form['country_name']
             if len(user_search) > 0: # checks if the input is blank
                 return redirect(url_for("search_results", input = user_search))
 
