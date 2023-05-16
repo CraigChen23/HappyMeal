@@ -136,3 +136,10 @@ Craig: set up droplet
 Wiiliam: worked on connecting chart to database data
 Q: How do you access a js variable in a python file?
 ===============================================================
+
+ALL -- 2023-05-16 0
+--------------------------------------------------------------
+Nada: requirements.txt updates, database
+Craig: droplet deployment
+Wiiliam: get data from database into chart.js
+===============================================================
