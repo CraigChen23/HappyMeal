@@ -104,7 +104,7 @@ def populate_exports_db():
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
 
-    with open ('exports.csv', 'r') as f:
+    # with open ('exports.csv', 'r') as f:
         reader = csv.reader(f)
         columns = next(reader) 
         query = 'insert into exports({0}) values ({1})'
