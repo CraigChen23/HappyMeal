@@ -143,3 +143,10 @@ Nada: requirements.txt updates, database
 Craig: droplet deployment
 Wiiliam: get data from database into chart.js
 ===============================================================
+
+EricaL -- 2023-06-16 10:50
+--------------------------------------------------------------
+* worked on search query on __init__.py 
+* edited form on home.html
+* working on pulling out data from RESTcountries API
+===============================================================

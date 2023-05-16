@@ -104,11 +104,7 @@ def populate_exports_db():
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
 
-<<<<<<< HEAD
-    # with open ('exports.csv', 'r') as f:
-=======
-    with open ('../HappyMeal/app/exports.csv', 'r') as f:
->>>>>>> 7bea4c63bb267b7aa95034b5814f8dfbf72c2aa0
+    with open ('app/exports.csv', 'r') as f:
         reader = csv.reader(f)
         columns = next(reader) 
         query = 'insert into exports({0}) values ({1})'
