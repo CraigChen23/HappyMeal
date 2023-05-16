@@ -1,0 +1,10 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/paris.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: absolute;
+    max-height: 100vh;
+    overflow-y: hidden;
+    background-color: black;
+    font-family: "Open Sans";
+}
