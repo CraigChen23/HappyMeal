@@ -76,7 +76,7 @@ def log_out():
 def home():
     return render_template('home.html')
 
-# allow user to search country info and it brings to page with infor
+# allow user to search country info and it brings to page with info
 @app.route("/home/search", methods=['GET', 'POST'])
 def get_country_info():
     country_name = request.form.get("query")

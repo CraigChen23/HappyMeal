@@ -12,7 +12,7 @@ def key_Geoapify():
         return 'False'
 
 #gets the country's population based off its name 
-def get_population(official_name):
+def get_population(country_name):
     name = official_name
     url = 'https://restcountries.com/v3.1/name/{name}?fullText=true'
 
