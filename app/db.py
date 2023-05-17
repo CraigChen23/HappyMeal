@@ -104,7 +104,7 @@ def populate_exports_db():
     db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
     c = db.cursor()
 
-    with open ('app/exports.csv', 'r') as f:
+    with open ('exports.csv', 'r') as f:
         reader = csv.reader(f)
         columns = next(reader) 
         query = 'insert into exports({0}) values ({1})'
@@ -120,5 +120,38 @@ def populate_exports_db():
     db.commit()
     db.close()
 
-#create_exports_db()
-#populate_exports_db()
+def get_years():
+    DB_FILE="exports.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+
+    with open('exports.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            k = list(row.keys()) #dict_keys object
+    return k
+
+    db.commit()
+    db.close()
+
+def get_country_data(country):
+    DB_FILE="exports.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    data = {}
+    with open('exports.csv', 'r') as f:
+        reader = list(csv.DictReader(f))
+        for row in reader:
+            #print(row['country'])
+            if row['country'] is country:
+                data = row.values()
+    print(data)
+
+    db.commit()
+    db.close()
+
+
+create_exports_db()
+populate_exports_db()
+print(get_years()[10])
+get_country_data("China")
