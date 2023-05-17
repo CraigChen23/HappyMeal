@@ -1,6 +1,5 @@
-import requests
-import os
-import json
+import requests, os
+import json, urllib.request
 
 def key_Geoapify():
     try:
@@ -11,10 +10,32 @@ def key_Geoapify():
     except: 
         return 'False'
 
-#gets the country's population based off its name 
-def get_population(country_name):
-    name = official_name
+#gets the country's currency based off its name 
+def get_currency(country_name):
+    name = country_name
+  #  res = request.get(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
+    data = urlib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
+    json = json.load(data)
+    print(json)
+    #currency = json[0]["currencies"]["CNY"]["name"]
+    #return currency
+
+print (get_currency('China'))
+
+#gets the country's gini coefficient based off its name 
+def get_gini(country_name):
+    name = country_name
     url = 'https://restcountries.com/v3.1/name/{name}?fullText=true'
+    res = requests.get(url) 
+    json = res.json() 
+    gini = json["gini"][0]
+    return gini
 
-    
-
+#gets the country's capital based off its name 
+def get_capital(country_name):
+    name = country_name
+    url = 'https://restcountries.com/v3.1/name/{name}?fullText=true'
+    res = requests.get(url) 
+    json = res.json() 
+    capital = json["capital"][0]
+    return capital
