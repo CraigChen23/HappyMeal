@@ -144,15 +144,22 @@ Craig: droplet deployment
 Wiiliam: get data from database into chart.js
 ===============================================================
 
-EricaL -- 2023-06-16 10:50
+EricaL -- 2023-05-16 10:50
 --------------------------------------------------------------
 * worked on search query on __init__.py 
 * edited form on home.html
 * working on pulling out data from RESTcountries API
 ===============================================================
 
-EricaL -- 2023-06-16 12:21
+EricaL -- 2023-05-16 12:21
 --------------------------------------------------------------
 * worked on CSS styling for login
 * fixed up the search query
+===============================================================
+
+ALL -- 2023-05-17 9:21
+--------------------------------------------------------------
+* Ajax to convert the data to be readable for js
+* line chart using d3, data is gathered from api using python 
+functions converted to json in html and then parsed to be displayed in js
 ===============================================================
