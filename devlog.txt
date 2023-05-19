@@ -160,6 +160,6 @@ EricaL -- 2023-05-16 12:21
 Tour Notes -- 2023-05-17 9:21
 --------------------------------------------------------------
 * Ajax to convert the data to be readable for js
-* line chart using d3, data is gathered from api using python 
-functions converted to json in html and then parsed to be displayed in js
+* line chart can be made using d3, the data is gathered from api using python 
+functions and then converted to json in html -> parsed to be displayed in js
 ===============================================================
