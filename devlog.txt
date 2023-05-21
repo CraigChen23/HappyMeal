@@ -163,3 +163,10 @@ Tour Notes -- 2023-05-17 9:21
 * line chart can be made using d3, the data is gathered from api using python 
 functions and then converted to json in html -> parsed to be displayed in js
 ===============================================================
+
+WilliamG -- 2023-05-21 01:23
+--------------------------------------------------------------
+* choropleth map in the working, now shows range of color depending on different values
+* choropleth has substitute values in place instead of database ones (STILL NEEDS TO BE UPDATED)
+* tried drawing lineChart using d3, no database value yet 
+===============================================================
