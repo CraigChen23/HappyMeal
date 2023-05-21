@@ -5,7 +5,6 @@ body {
   }
   
   .country {
-    fill:#d4d2d2; 
     stroke: black;
     stroke-width: 0.5px;
   }
