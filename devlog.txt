@@ -132,7 +132,7 @@ ALL -- 2023-05-15 09:20
 --------------------------------------------------------------
 Erica: worked on api function
 Nada: succeeded in populating exports.db
-Craig: set up droplet
+Craig: started research on how to set up droplet
 Wiiliam: worked on connecting chart to database data
 Q: How do you access a js variable in a python file?
 ===============================================================
@@ -140,7 +140,7 @@ Q: How do you access a js variable in a python file?
 ALL -- 2023-05-16 0
 --------------------------------------------------------------
 Nada: requirements.txt updates, database
-Craig: droplet deployment
+Craig: took over droplet deployment hosting
 Wiiliam: get data from database into chart.js
 ===============================================================
 
@@ -149,6 +149,12 @@ EricaL -- 2023-05-16 10:50
 * worked on search query on __init__.py 
 * edited form on home.html
 * working on pulling out data from RESTcountries API
+===============================================================
+
+CraigC -- 2023-05-16 11:00
+--------------------------------------------------------------
+* installed components and set up python environment with flask app 
+* configuring nginx but came upon issue of routing
 ===============================================================
 
 EricaL -- 2023-05-16 12:21
