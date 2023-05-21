@@ -14,11 +14,11 @@ def key_Geoapify():
 def get_currency(country_name):
     name = country_name
   #  res = request.get(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
-    data = urlib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
-    json = json.load(data)
-    print(json)
-    #currency = json[0]["currencies"]["CNY"]["name"]
-    #return currency
+    data = urllib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
+    country_json = json.load(data)
+    #print(country_json)
+    currency = country_json[0]["currencies"]["CNY"]["name"]
+    return currency
 
 print (get_currency('China'))
 

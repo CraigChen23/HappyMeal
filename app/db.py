@@ -143,9 +143,9 @@ def get_country_data(country):
         reader = list(csv.DictReader(f))
         for row in reader:
             #print(row['country'])
-            if row['country'] is country:
-                data = row.values()
-    print(data)
+            if row['country'] == country:
+                data = list(row.values())[1:]
+    return data
 
     db.commit()
     db.close()
@@ -153,5 +153,5 @@ def get_country_data(country):
 
 create_exports_db()
 populate_exports_db()
-print(get_years()[10])
-get_country_data("China")
+print("The years in the data are: " + str(get_years()[1:]))
+print("Data from Thailand: " +  str(get_country_data("Thailand")))
