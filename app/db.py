@@ -143,7 +143,7 @@ def get_country_data(country):
         reader = list(csv.DictReader(f))
         for row in reader:
             #print(row['country'])
-            if row['country'] == country:
+            if row['country'].lower() == str(country).lower():
                 data = list(row.values())[1:]
     return data
 
