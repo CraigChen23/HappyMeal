@@ -176,3 +176,16 @@ WilliamG -- 2023-05-21 01:23
 * choropleth has substitute values in place instead of database ones (STILL NEEDS TO BE UPDATED)
 * tried drawing lineChart using d3, no database value yet 
 ===============================================================
+
+WilliamG -- 2023-05-21 23:04
+--------------------------------------------------------------
+* linechart with d3 completed, shows correct values from database but still need to catch few exceptions:
+    - country name search is case sensitive
+    - some countries have no values
+* Good things to add to chart (not necessary but for good quality of life):
+    - Title and axis label
+    - Interactive line chart so each point shows exact value and year
+* reworked routing between home page and search page
+* reworked database to get key values and data values
+* debugged api functions
+===============================================================
