@@ -12,9 +12,16 @@ const y = d3.scaleLinear()
 
 const YearsToExport = []
 for(let i=0; i<years.length; i++){
-  const a = {xvalue: years[i], yvalue: exportAmt[i]};
+  var a = {}
+  if (exportAmt[i] != undefined){
+    a = {xvalue: years[i], yvalue: exportAmt[i]};
+  }else{
+    a = {xvalue: years[i], yvalue: 0};
+  }
   YearsToExport.push(a);
 }
+
+console.log(YearsToExport)
 
   
 function LineChart(data){
