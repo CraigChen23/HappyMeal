@@ -54,14 +54,13 @@ def get_official_name(country_name):
     gini = country_json[0]["name"]["official"]
     return gini
 
-print(get_lang('China'))
-print(get_gini('China'))
-print(get_capital('China'))
-print(get_common_name('China'))
-print(get_official_name('China'))
+#print(get_lang('China'))
+#print(get_gini('China'))
+#print(get_capital('China'))print(get_common_name('China'))
+#print(get_official_name('China'))
 
-print(get_lang('sweden'))
-print(get_gini('sweden'))
-print(get_capital('sweden'))
-print(get_common_name('sweden'))
-print(get_official_name('sweden'))
+#print(get_lang('sweden'))
+#print(get_gini('sweden'))
+#print(get_capital('sweden'))
+#print(get_common_name('sweden'))
+#print(get_official_name('sweden'))
