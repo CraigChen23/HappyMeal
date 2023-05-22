@@ -153,5 +153,5 @@ def get_country_data(country):
 
 create_exports_db()
 populate_exports_db()
-print("The years in the data are: " + str(get_years()[1:]))
-print("Data from Thailand: " +  str(get_country_data("Thailand")))
+#print("The years in the data are: " + str(get_years()[1:]))
+#print("Data from Thailand: " +  str(get_country_data("Thailand")))

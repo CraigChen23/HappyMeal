@@ -51,4 +51,3 @@ Mapsetup().then(countries => {
     .attr('fill', d => colorScale(colorValue(d)))
     .append('title').text(d => d.properties[0] + ": " + colorValue(d)); // label selection with country name
 });
-

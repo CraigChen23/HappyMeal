@@ -1,5 +1,4 @@
 // Set dimensions and margins for the chart
-
 const margin = { top: 70, right: 30, bottom: 40, left: 80 };
 const width = 800 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
@@ -11,7 +10,14 @@ const x = d3.scaleTime()
 const y = d3.scaleLinear()
   .range([height, 0]);
 
-function LineChart(datax, datay){
+const YearsToExport = []
+for(let i=0; i<years.length; i++){
+  const a = {xvalue: years[i], yvalue: exportAmt[i]};
+  YearsToExport.push(a);
+}
+
+  
+function LineChart(data){
   // Create the SVG element and append it to the chart container
 const svg = d3.select("#chart-container")
 .append("svg")
@@ -20,62 +26,58 @@ const svg = d3.select("#chart-container")
 .append("g")
   .attr("transform", `translate(${margin.left},${margin.top})`);
 
-// loop through inputs to make dataset using for loops 
-// Create a fake dataset
-const dataset = [
-{ date: new Date("2022-01-01"), value: 200 },
-{ date: new Date("2022-02-01"), value: 250 },
-{ date: new Date("2022-03-01"), value: 180 },
-{ date: new Date("2022-04-01"), value: 300 },
-{ date: new Date("2022-05-01"), value: 280 },
-{ date: new Date("2022-06-01"), value: 220 },
-{ date: new Date("2022-07-01"), value: 300 },
-{ date: new Date("2022-08-01"), value: 450 },
-{ date: new Date("2022-09-01"), value: 280 },
-{ date: new Date("2022-10-01"), value: 600 },
-{ date: new Date("2022-11-01"), value: 780 },
-{ date: new Date("2022-12-01"), value: 320 }
-];
-
 // Define the x and y domains
-x.domain(d3.extent(dataset, d => d.date));
-y.domain([0, d3.max(dataset, d => d.value)]);
+var x = d3.scaleBand()
+.domain(data.map(d => d.xvalue))
+.range([0, width - margin.left - margin.right])
+.padding(.1);
 
-// Add the x-axis
+var y = d3.scaleLinear()
+.domain([0, d3.max(data, d => d.yvalue * 1.05)])
+.range([height - margin.top - margin.bottom, 0])
+.nice();
+
+console.log(d3.max(data, d => d.yvalue))
+
+// Add the x-axis to the chart
+
 svg.append("g")
-.attr("class", "x-axis")
-.attr("transform", `translate(0,${height})`)
+.attr("class", "x axis")
+.attr("transform", "translate(0," + (height - margin.top - margin.bottom) + ")")
 .call(d3.axisBottom(x))
-.selectall("text")
-.attr("y", -5)
-.attr("x", -130)
-.style("text-anchor", "middle")
-.attr("transform", "rotate(-90)")
-.text("Years")
+.selectAll("text")
+  .attr("y", -2)
+  .attr("x", -25)
+  .attr("dx", "0.2em")
+  .style("text-anchor", "middle")
+  .attr("transform", "rotate(-90)")
 
-// Add the y-axis
+// Add the y-axis to the chart
 svg.append("g")
-.attr("class", "y-axis")
-.call(d3.axisLeft(y).ticks(5))
-.selectall("text")
-.attr("y", 6)
-.attr("dy","1em")
-.style("text-anchor", "middle")
-.text("Exports")
+.attr("class", "y axis")
+.call(d3.axisLeft(y).ticks(10))
+.append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("x", -6)
+  .attr("y", 6)
+  .attr("dy", "1em")
+  .style("text-anchor", "midde")
+  .text("Years");
 
-// Create the line generator
+// Add the line to the chart
 var line = d3.line()
-.x(d => x(d.date))
-.y(d => y(d.value));
+.x(d => x(d.xvalue) + x.bandwidth() / 2)
+.y(d => y(d.yvalue));
 
 // Add the line path to the SVG element
 svg.append("path")
-.datum(dataset)
+.datum(data)
 .attr("fill", "none")
 .attr("stroke", "steelblue")
-.attr("stroke-width", 1)
+.attr("stroke-width", 1.5)
 .attr("d", line);
 }
 
 // call function
-LineChart(datax,datay);
+LineChart(YearsToExport);
+console.log(YearsToExport)

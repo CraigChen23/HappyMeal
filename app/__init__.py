@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, session, request, url_for
 import json
 import db
 import api_functions as api 
+from db import get_country_data, get_years
 
 app = Flask(__name__)
 app.secret_key = "super"
@@ -90,6 +91,18 @@ def get_country_info(input):
 
     #country_name = request.form.get("country_name")
     return render_template('chart.html', country = country_name)
+
+
+@app.route("/home/search", methods=['GET', 'POST'])
+def get_database_info():
+    if not 'username' in session: #if someone tries to go here when not logged in
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        country_name = request.form.get("country_name")
+    #print("The years in the data are: " + str((get_years()[1:])))
+    #print("Data from " + country_name + ": " +  str(get_country_data(country_name)))
+    return render_template('linechart.html', country = country_name, xvalue = get_years()[1:], yvalue = get_country_data(country_name))
 
 '''
 #click on country and it brings you to a page with all their info

@@ -20,7 +20,7 @@ def get_currency(country_name):
     currency = country_json[0]["currencies"]["CNY"]["name"]
     return currency
 
-print (get_currency('China'))
+print(get_currency('China'))
 
 #gets the country's gini coefficient based off its name 
 def get_gini(country_name):
