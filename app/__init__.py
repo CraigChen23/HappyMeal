@@ -102,9 +102,16 @@ def get_database_info():
 
     if request.method == 'POST':
         country_name = request.form.get("country_name")
+        lang = api.get_lang(country_name)
+        gini = api.get_gini(country_name)
+        capital = api.get_capital(country_name)
+        common_name = api.get_common_name(country_name)
+        official_name = api.get_official_name(country_name)
+        flag_url = api.get_flag(country_name)
     #print("The years in the data are: " + str((get_years()[1:])))
     #print("Data from " + country_name + ": " +  str(get_country_data(country_name)))
-    return render_template('linechart.html', country = country_name, xvalue = get_years()[1:], yvalue = get_country_data(country_name))
+    return render_template('linechart.html', country = country_name, xvalue = get_years()[1:], yvalue = get_country_data(country_name), 
+    common_name = common_name, gini = gini, capital = capital, official_name = official_name, flag_url = flag_url, lang = lang)
 
 '''
 #click on country and it brings you to a page with all their info
