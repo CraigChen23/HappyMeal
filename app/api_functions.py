@@ -17,9 +17,9 @@ def get_lang(country_name):
     data = urllib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
     country_json = json.load(data)
     #print(country_json)
-    currency = country_json[0]["languages"].values()
-    currency = list(currency)
-    return (currency[0])
+    lang = country_json[0]["languages"].values()
+    lang = list(lang)
+    return (lang[0])
 
 #gets the country's gini coefficient based off its name 
 def get_gini(country_name):
