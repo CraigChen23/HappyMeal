@@ -199,7 +199,9 @@ WilliamG -- 2023-05-21 23:04
 EricaL -- 2023-05-22 22:51
 --------------------------------------------------------------
 * Finished CSS styling and HTML templates for all the pages except for linechart 
-* Worked on API_functions before the API server went down...lol 
+* Created helper functions on API_functions before the API server went down...lol 
+* Looked into bootstrap & how cards/carousel works
+===============================================================
 
 NadaH -- 2023-05-22 21:23
 --------------------------------------------------------------
