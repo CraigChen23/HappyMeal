@@ -43,16 +43,24 @@ def get_common_name(country_name):
     name = country_name
     data = urllib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
     country_json = json.load(data)
-    gini = country_json[0]["name"]["common"]
-    return gini
+    common_name = country_json[0]["name"]["common"]
+    return common_name
 
 #gets the country's official name based off its name 
 def get_official_name(country_name):
     name = country_name
     data = urllib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
     country_json = json.load(data)
-    gini = country_json[0]["name"]["official"]
-    return gini
+    official_name = country_json[0]["name"]["official"]
+    return official_name
+
+#gets the country's flag based off its name
+def get_flag(country_name):
+    name = country_name
+    data = urllib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
+    country_json = json.load(data)
+    flag_url = country_json[0]["flag"]
+    return flag_url
 
 #print(get_lang('China'))
 #print(get_gini('China'))
