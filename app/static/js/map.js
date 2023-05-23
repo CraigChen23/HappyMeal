@@ -15,16 +15,30 @@ const Mapsetup = () =>
       countryName[d.iso_n3] = [d.name, Math.floor(Math.random() * 10)];
     });
 
+    console.log(countryName)
+
     // -------------------- YO START HERE BRO (CHECK CONSOLE)------------------------------
     // data manipulation in progress
     const temp = {};
     for (keys in countryName){
       for (var i = 0; i < DataByYears.length; i++){
-        if (countryName[keys][0] == DataByYears[i][0]){
+        if (DataByYears[i][0] == countryName[keys][0]){
           temp[countryName["" + keys][0]] = [countryName[keys[0]], DataByYears[i][1] + ""]
-        }      
+          //countryName[keys] = [countryName[keys][0], parseFloat(DataByYears[i][1])];
+        }
+        /** 
+        else{
+          temp[countryName["" + keys][0]] = [countryName[keys[0]], 0 + ""]
+        } 
+        */     
       }
     }
+
+    for (const [key, value] of Object.entries(countryName)) {
+      console.log(key, value);
+    }
+
+    
     
     const temp2 = [];
     for (keys in temp){
