@@ -7,15 +7,15 @@ const Mapsetup = () =>
     //search up country name by id
     const countryName = {};
     tsvData.forEach(d => { // loop through tsv file
-      var dbList = document.getElementById("exports").innerHTML;
-      console.log((dbList));
-      dbList = JSON.parse(dbList)
+      //var dbList = document.getElementById("exports").innerHTML;
+      //console.log((dbList));
+      //dbList = JSON.parse(dbList)
       //countryName[d.iso_n3] = [d.name, Math.floor(dbList[countryName])]; // set each Id with a array of [name, export_value]
       //console.log(dbList[countryName]);
       countryName[d.iso_n3] = [d.name, Math.floor(Math.random() * 10)];
     });
 
-    // -------------------- YO START HERE BRO (CHECK CONSOLE)------------------------------
+    /** -------------------- YO START HERE BRO (CHECK CONSOLE)------------------------------
     // data manipulation in progress
     const temp = {};
     for (keys in countryName){
@@ -32,7 +32,7 @@ const Mapsetup = () =>
     }
     
     console.log("Temp dict value is: " + temp2)
-    // --------------------- END OF TESTS -----------------------
+    // --------------------- END OF TESTS ----------------------- **/
 
     countries.features.forEach(d => {
       Object.assign(d.properties, countryName[d.id]);
