@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, session, request, url_for
 import json
 import db
 import api_functions as api 
-from db import get_country_data, get_years
+from db import get_country_data, get_years, get_years_data
 
 app = Flask(__name__)
 app.secret_key = "super"
@@ -75,8 +75,9 @@ def log_out():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    return render_template('home.html', data = get_years_data(1990))
 
+'''
 # allow user to search country info and it brings to page with info
 @app.route("/search/<input>", methods=['GET', 'POST'])
 def get_country_info(input):
@@ -91,7 +92,7 @@ def get_country_info(input):
 
     #country_name = request.form.get("country_name")
     return render_template('chart.html', country = country_name)
-
+'''
 
 @app.route("/home/search", methods=['GET', 'POST'])
 def get_database_info():
@@ -122,4 +123,4 @@ def no_info():
 
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change
-    app.run()
+    app.run(host = '0.0.0.0')

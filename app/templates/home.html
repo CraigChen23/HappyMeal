@@ -41,7 +41,9 @@
           <div class="col-8 col-12 border">
             <svg viewBox = "-75 -200 1125 1200 "> </svg>
             <!-- <svg viewBox = "-50 -200 1050 1400 "> </svg> -->
-            <script src="../static/js/map.js"></script>
+            <script type="text/javascript">
+              var DataByYears = {{data|tojson}};
+            </script>
           </div>
           <div class="col">
             <div class="p-3 border bg-light">Custom column padding</div>
@@ -51,4 +53,5 @@
     
       </div>
     </body>
+    <script type="text/javascript" src="../static/js/map.js"> </script>
 </html>

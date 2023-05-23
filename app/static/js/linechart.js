@@ -69,7 +69,6 @@ svg.append("g")
   .attr("y", 6)
   .attr("dy", "1em")
   .style("text-anchor", "midde")
-  .text("Years");
 
 // Add the line to the chart
 var line = d3.line()
@@ -84,7 +83,6 @@ svg.append("path")
 .attr("stroke-width", 1.5)
 .attr("d", line);
 }
-
 // call function
 LineChart(YearsToExport);
 console.log(YearsToExport)

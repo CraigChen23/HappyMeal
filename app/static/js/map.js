@@ -10,10 +10,29 @@ const Mapsetup = () =>
       countryName[d.iso_n3] = [d.name, Math.floor(Math.random() * 10)]; // set each Id with a array of [name, export_value]
     });
 
+    // -------------------- YO START HERE BRO (CHECK CONSOLE)------------------------------
+    // data manipulation in progress
+    const temp = {};
+    for (keys in countryName){
+      for (var i = 0; i < DataByYears.length; i++){
+        if (countryName[keys][0] == DataByYears[i][0]){
+          temp[countryName["" + keys][0]] = [countryName[keys[0]], DataByYears[i][1] + ""]
+        }      
+      }
+    }
+    
+    const temp2 = [];
+    for (keys in temp){
+      temp2.push("[" + keys + ":" + temp[keys] + "]")
+    }
+    
+    console.log("Temp dict value is: " + temp2)
+    // --------------------- END OF TESTS -----------------------
+
     countries.features.forEach(d => {
       Object.assign(d.properties, countryName[d.id]);
     });
-    console.log(countryName);
+    //console.log(countryName);
 
     return countries;
   });
@@ -51,3 +70,5 @@ Mapsetup().then(countries => {
     .attr('fill', d => colorScale(colorValue(d)))
     .append('title').text(d => d.properties[0] + ": " + colorValue(d)); // label selection with country name
 });
+
+//console.log(DataByYears)
