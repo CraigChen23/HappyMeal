@@ -36,13 +36,12 @@ def authenticate():
     user = request.form['username']
     passw = request.form['password']
     #print(db.valid_login(user, passw))
-
+    
     if db.valid_login(user, passw):
         session['username'] = user
-        return render_template('home.html', msg = "successfully logged in",dataList=db.get_years_exports("'2018'"))
+        return render_template('home.html', msg = "successfully logged in")
     else:
         return render_template('login.html', msg="Login Failed")
-
 '''
 register route, allows user to create a new account
 '''
@@ -75,7 +74,7 @@ def log_out():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
-    return render_template('home.html', data = get_years_data(1990))
+    return render_template('home.html') #, data = get_years_data(1990))
     # return render_template('home.html', dataList=db.get_years_exports("'2018'"))
 
 '''
