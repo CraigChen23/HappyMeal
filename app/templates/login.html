@@ -8,33 +8,39 @@
     </head>
 
     <body>
-        <form action="/login" method="POST" class ="text-center">
-            <h1 class="text-center">Login</h1>
-            <b>{{msg}}</b>
-            <div class="grid-x grid-padding-x">
-                <div class="cell small-12">
-                    <label>Username
-                    <input type="username" id="inputuser" name="username" placeholder="Enter your username" aria-describedby="exampleHelpTextPassword" required >
-                    </label>
+        <div class="card text-center mb-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"> <b> Login </b></h5>
+              <form action="/login" method="POST" class ="text-center">
+                <b>{{msg}}</b>
+                <div class="grid-x grid-padding-x">
+                    <div class="cell small-12">
+                        <label>Username
+                        <input type="username" id="inputuser" name="username" placeholder="Enter your username" aria-describedby="exampleHelpTextPassword" required >
+                        </label>
+                    </div>
+                    <div class="cell small-12">
+                        <label>Password
+                        <input type="password" id="inputpass" name="password" placeholder="Enter your password." aria-describedby="exampleHelpTextPassword" required >
+                        </label>
+                    </div>
                 </div>
-                <div class="cell small-12">
-                    <label>Password
-                    <input type="password" id="inputpass" name="password" placeholder="Enter your password." aria-describedby="exampleHelpTextPassword" required >
-                    </label>
+                <div class="grid-x grid-margin-x">
+                    <fieldset class="cell small-12">
+                        <button class="button" type="submit" value="Submit">Submit</button>
+                    </fieldset>
+                </form>
+                    <fieldset class="cell small-12">
+                        <button class="button" type="reset" value="Reset">Reset</button>
+                    </fieldset>
+                    <fieldset class="cell small-12">
+                        <a href="/register" class="button">Register</a>
+                    </fieldset>
                 </div>
+            </form>
             </div>
-            <div class="grid-x grid-margin-x">
-                <fieldset class="cell small-12">
-                    <button class="button" type="submit" value="Submit">Submit</button>
-                </fieldset>
-        </form>
-                <fieldset class="cell small-12">
-                    <button class="button" type="reset" value="Reset">Reset</button>
-                </fieldset>
-                <fieldset class="cell small-12">
-                    <a href="/register" class="button">Register</a>
-                </fieldset>
-            </div>
-        </form>
+          </div>
+
+        
     </body>
 </html>
