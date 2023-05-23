@@ -74,7 +74,7 @@ def log_out():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
-    return render_template('home.html') #, data = get_years_data(1990))
+    return render_template('home.html', data = get_years_data(1990)) #, data = get_years_data(1990))
     # return render_template('home.html', dataList=db.get_years_exports("'2018'"))
 
 '''

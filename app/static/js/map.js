@@ -15,7 +15,7 @@ const Mapsetup = () =>
       countryName[d.iso_n3] = [d.name, Math.floor(Math.random() * 10)];
     });
 
-    /** -------------------- YO START HERE BRO (CHECK CONSOLE)------------------------------
+    // -------------------- YO START HERE BRO (CHECK CONSOLE)------------------------------
     // data manipulation in progress
     const temp = {};
     for (keys in countryName){
