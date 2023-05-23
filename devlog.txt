@@ -163,6 +163,12 @@ EricaL -- 2023-05-16 12:21
 * fixed up the search query
 ===============================================================
 
+NadaH -- 2023-05-16 14:07
+--------------------------------------------------------------
+* worked on methods to get db data
+* looked into imported db data into charts
+===============================================================
+
 Tour Notes -- 2023-05-17 9:21
 --------------------------------------------------------------
 * Ajax to convert the data to be readable for js
@@ -188,4 +194,15 @@ WilliamG -- 2023-05-21 23:04
 * reworked routing between home page and search page
 * reworked database to get key values and data values
 * debugged api functions
+===============================================================
+
+NadaH -- 2023-05-22 21:23
+--------------------------------------------------------------
+* looked into getting data from python into js file to use for map visualization
+* created helper methods in db.py
+* modified init and home.html to actually translate across the db data
+* the db data now shows up in the console because it's being printed out, but there are still errors
+when actually trying to make that data what's shown when you hover over a country
+* you can access the data from the js file --> now i just need to figure out how to parse it
+so that it's readable for each country
 ===============================================================

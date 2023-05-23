@@ -39,7 +39,7 @@ def authenticate():
 
     if db.valid_login(user, passw):
         session['username'] = user
-        return render_template('home.html', msg = "successfully logged in")
+        return render_template('home.html', msg = "successfully logged in",dataList=db.get_years_exports("'2018'"))
     else:
         return render_template('login.html', msg="Login Failed")
 
@@ -75,7 +75,7 @@ def log_out():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    return render_template('home.html', dataList=db.get_years_exports("'2018'"))
 
 # allow user to search country info and it brings to page with info
 @app.route("/search/<input>", methods=['GET', 'POST'])

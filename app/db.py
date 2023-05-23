@@ -150,8 +150,26 @@ def get_country_data(country):
     db.commit()
     db.close()
 
+def get_years_exports(year):
+    DB_FILE="exports.db"
+    db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
+    c = db.cursor()
+    data = {}#'country':[], year:[]}
+    with open('exports.csv', 'r') as f:
+        reader = list(csv.DictReader(f))
+        for row in reader:
+            #print(row.get(year))
+            data[row.get('country')] = row.get(year)
+            #data['country'].append(row.get('country'))
+            #data[year].append(row.get(year))
+    return data
+
+    db.commit()
+    db.close()
+
 
 create_exports_db()
 populate_exports_db()
 #print("The years in the data are: " + str(get_years()[1:]))
 #print("Data from Thailand: " +  str(get_country_data("Thailand")))
+print(get_years_exports("'2018'"))
