@@ -6,14 +6,19 @@ const Mapsetup = () =>
     const countries = topojson.feature(topojsonData, topojsonData.objects.countries);
     //search up country name by id
     const countryName = {};
-    tsvData.forEach(d => { // loop through tsv file 
-      countryName[d.iso_n3] = [d.name, Math.floor(Math.random() * 10)]; // set each Id with a array of [name, export_value]
+    tsvData.forEach(d => { // loop through tsv file
+      var dbList = document.getElementById("exports").innerHTML;
+      console.log((dbList));
+      dbList = JSON.parse(dbList)
+      //countryName[d.iso_n3] = [d.name, Math.floor(dbList[countryName])]; // set each Id with a array of [name, export_value]
+      //console.log(dbList[countryName]);
+      countryName[d.iso_n3] = [d.name, Math.floor(Math.random() * 10)];
     });
 
     countries.features.forEach(d => {
       Object.assign(d.properties, countryName[d.id]);
     });
-    console.log(countryName);
+    //console.log(countryName);
 
     return countries;
   });
