@@ -189,3 +189,9 @@ WilliamG -- 2023-05-21 23:04
 * reworked database to get key values and data values
 * debugged api functions
 ===============================================================
+
+EricaL -- 2023-05-22 22:51
+--------------------------------------------------------------
+* Finished CSS styling and HTML templates for all the pages except for linechart 
+* Worked on API_functions before the API server went down...lol 
+===============================================================
