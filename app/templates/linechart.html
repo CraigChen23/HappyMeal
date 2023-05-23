@@ -38,11 +38,17 @@
   </script>
 
   <div class="card mb-3">
-    <img src="..." class="card-img-top" alt="...">
+    <img src= {{flag_url}} class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title"> {{country}} </h5>
+      <p class="card-text">
+        Common Name: {{common_name}}
+        Offficial Name: {{official_name}}
+        Capital of Country: {{capital}}
+        Language Used: {{lang}}
+        Gini Coefficient*: {{gini}}
+        <p class="card-text"><small class="text-muted"> *The Gini coefficient measures the extent to which the distribution of income within a country deviates from a perfectly equal distribution. A coefficient of 0 expresses perfect equality where everyone has the same income, while a coefficient of 100 expresses full inequality where only one person has all the income. </small></p>
+      </p>
     </div>
   </div>
   <div class="card">

@@ -59,8 +59,9 @@ def get_flag(country_name):
     name = country_name
     data = urllib.request.urlopen(f'https://restcountries.com/v3.1/name/{name}?fullText=true')
     country_json = json.load(data)
-    flag_url = country_json[0]["flag"]
-    return flag_url
+    flag_url = country_json[0]["flags"].values()
+    flag_url = list(flag_url)
+    return (flag_url[1])
 
 #print(get_lang('China'))
 #print(get_gini('China'))
