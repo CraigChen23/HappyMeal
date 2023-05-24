@@ -15,8 +15,9 @@ const Mapsetup = () =>
       countryName[d.iso_n3] = [d.name, Math.floor(Math.random() * 10)];
     });
 
-    console.log(countryName)
+    //console.log(countryName)
 
+    /*
     // -------------------- YO START HERE BRO (CHECK CONSOLE)------------------------------
     // data manipulation in progress
     const temp = {};
@@ -25,12 +26,7 @@ const Mapsetup = () =>
         if (DataByYears[i][0] == countryName[keys][0]){
           temp[countryName["" + keys][0]] = [countryName[keys[0]], DataByYears[i][1] + ""]
           //countryName[keys] = [countryName[keys][0], parseFloat(DataByYears[i][1])];
-        }
-        /** 
-        else{
-          temp[countryName["" + keys][0]] = [countryName[keys[0]], 0 + ""]
-        } 
-        */     
+        }    
       }
     }
 
@@ -56,17 +52,63 @@ const Mapsetup = () =>
     return countries;
   });
 
+  const colorLegend = (selection, props) => {
+    const {                      
+      colorScale,                
+      circleRadius,
+      spacing,                   
+      textOffset,
+      backgroundRectWidth        
+    } = props;                   
+    
+    const backgroundRect = selection.selectAll('rect')
+      .data([null]);             
+    const n = colorScale.domain().length; 
+    backgroundRect.enter().append('rect')
+      .merge(backgroundRect)
+        .attr('x', -circleRadius * 2)   
+        .attr('y', -circleRadius * 2)   
+        .attr('rx', circleRadius * 2)   
+        .attr('width', backgroundRectWidth)
+        .attr('height', spacing * n + circleRadius * 2) 
+        .attr('fill', 'black')
+        .attr('opacity', 0.6);
+    
+    const groups = selection.selectAll('.tick')
+      .data(colorScale.domain());
+    const groupsEnter = groups
+      .enter().append('g')
+        .attr('class', 'tick');
+    groupsEnter
+      .merge(groups)
+        .attr('transform', (i) =>    
+          `translate(0, ${i * spacing})`  
+        );
+    groups.exit().remove();
+    
+    groupsEnter.append('circle')
+      .merge(groups.select('circle')) 
+        .attr('r', circleRadius)
+        .attr('fill', colorScale);      
+    
+    groupsEnter.append('text')
+      .merge(groups.select('text'))   
+        .text(d => d)
+        .attr('dy', '0.32em')
+        .attr('x', textOffset)
+  };
+  
 const svg = d3.select('svg');
 
 // projection type for the map
 const projection = d3.geoMercator()
 const pathGenerator = d3.geoPath().projection(projection);
 
+const g = svg.append('g');
+
 // group for color legend
 const colorLegendG = svg.append('g')
   .attr('transform', 'translate(180,150');
-
-const g = svg.append('g');
 
 //zoom with scrolling
 svg.call(d3.zoom().on('zoom', () => {
@@ -80,6 +122,14 @@ Mapsetup().then(countries => {
   colorScale.domain(countries.features.map(colorValue))
     .domain(colorScale.domain().sort().reverse()) // sort values greatest to least
     .range(d3.schemeSpectral[colorScale.domain().length]);
+  
+  colorLegendG.call(colorLegend, {
+    colorScale,
+    circleRadius: 10,
+    spacing: 30,
+    textOffset: 15,
+    backgroundRectWidth: 50
+  });
 
   // use topojson library to convert topojson to geojson for d3
   g.selectAll('path').data(countries.features)

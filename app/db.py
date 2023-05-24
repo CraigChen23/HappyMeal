@@ -3,6 +3,7 @@
 import sqlite3
 import csv
 import pandas as pd
+import json
 
 '''USERS==================================================================='''
 
@@ -156,7 +157,7 @@ def get_years_data(year):
 
 create_exports_db()
 populate_exports_db()
-#print(get_years_data(1992))
+print(get_years_data(1992))
 #print("The years in the data are: " + str(get_years()[1:]))
 #print("Data from Thailand: " +  str(get_country_data("Thailand")))
 #print(get_years_exports("'2018'"))

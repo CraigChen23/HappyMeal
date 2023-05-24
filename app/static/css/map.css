@@ -12,3 +12,14 @@ body {
   .country:hover{
     fill: gray
   }
+
+  .tick text {
+    font-size: 1em;
+    fill: white;
+    font-family: sans-serif;
+  }
+  
+  .tick circle {
+    stroke: black;
+    stroke-opacity: 0.5;
+  }
