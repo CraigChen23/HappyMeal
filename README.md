@@ -8,10 +8,9 @@
 
 ---
 ## Abstract/Summary of App:
-We plan to make a choropleth map of the world showcasing the exports of coffees from each country (or at least the ones on the database) throughout the different years. When users click onto the country, it will redirect them to another page that has a bar graph and pie chart of their coffee export throughout the years. 
+We plan to make a choropleth map of the world showcasing the exports of coffees from each country (or at least the ones on the database) throughout the different years. When users hovers the country, it will display the amount of coffee exported in that year. Clients are able to search for different countries which will redirect them another page that has a line chart with all the exports across the years as well a some fun facts. 
 
-Clients are able to filter results based on country and year. 
-Time permitted, a search function to find nearby coffee shops based on location 
+Time permitted, a search function to find nearby coffee shops based on location and integration of the other csv datas.
 
 ---
 ## API Cards:
@@ -38,6 +37,6 @@ or
 ---
 ## Data:
 
-Description here 
+Description: CSV containing information on of coffee exports from the year 1990 - 2018. The information includes country name, each individual year and the amount of coffee exported in thousands of 60kg bags. There are also other csv files with data on coffee consumption, coffee imports, prices, inventories etc. 
 
 Source: https://www.kaggle.com/datasets/yamaerenay/ico-coffee-dataset-worldwide
