@@ -213,3 +213,12 @@ when actually trying to make that data what's shown when you hover over a countr
 * you can access the data from the js file --> now i just need to figure out how to parse it
 so that it's readable for each country
 ===============================================================
+
+WilliamG -- 2023-05-24 00:34
+--------------------------------------------------------------
+* kinda sucessfully transfered data from sqlite based on year to choropleth map
+    - it can be seen on the console but sometimes there's error of the data being undefined
+    - values are stored in array [country name , coffee export amount]
+* added a color legend to the choropleth map
+* reworked card styling and line chart styling 
+===============================================================
